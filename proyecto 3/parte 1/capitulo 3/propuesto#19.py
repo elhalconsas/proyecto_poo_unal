@@ -8,14 +8,14 @@ Principal.pack()
  
 class triangulo:
     def __init__(self):
-        # Inicializar las variables como cadenas de texto
+       
         self.ladoA = StringVar()
         self.ladoB = StringVar()
         self.ladoC = StringVar()
         self.pedir()
 
     def pedir(self):
-        # Crear entradas para los lados del triángulo
+    
         Label(Principal, text="Lado A:").grid(row=0, column=0, padx=3, pady=3)
         Entry(Principal, textvariable=self.ladoA).grid(row=0, column=1, padx=3, pady=3)
         
@@ -25,7 +25,7 @@ class triangulo:
         Label(Principal, text="Lado C:").grid(row=2, column=0, padx=3, pady=3)
         Entry(Principal, textvariable=self.ladoC).grid(row=2, column=1, padx=3, pady=3)
         
-        # Botón para mostrar resultados
+
         Button(Principal, text="Calcular", command=lambda:self.print()).grid(row=3, column=0, columnspan=2, pady=10)
 
     def perimetro(self,):
@@ -41,18 +41,17 @@ class triangulo:
         areas = (float(self.ladoC.get()) * self.altura()) / 2
         return areas
     def print(self):
-        # Mostrar resultados
+   
         altura = self.altura()
         perimetro = self.perimetro()
         area = self.area()
 
-        # Mostrar resultados en etiquetas
         Label(Principal, text=f"La altura del triángulo es: {altura:.2f}").grid(row=4, column=0, columnspan=2, padx=3, pady=3)
         Label(Principal, text=f"El perímetro del triángulo es: {perimetro:.2f}").grid(row=5, column=0, columnspan=2, padx=3, pady=3)
         Label(Principal, text=f"El área del triángulo es: {area:.2f}").grid(row=6, column=0, columnspan=2, padx=3, pady=3)
 
-# Crear instancia de la clase
+
 triangulos = triangulo()
 
-# Ejecutar la ventana principal
+
 raiz.mainloop()
